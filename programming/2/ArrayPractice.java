@@ -186,9 +186,14 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
   */
   public static boolean isSorted( int[] data )
   {
-    /* YOUR BRILLIANT CODE HERE */
-
-    return true; // replace this
+    for(int i = 1;i < data.length;i++){
+      if (data[i] < data[i-1]) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
 
   }
 
@@ -254,11 +259,10 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
   {
     int[] tempArray = new int [data.length];
     
-    for (int i = data.length, int j = 0;i >=0;i--, j++){
+    for (int i = data.length, int j = 0;i >=0 && j < data.length;i--, j++){
       tempArray[j] = data[i];
       
     }
-
     for (int i = data.length;i < data.length;i++){
       data[i] = tempArray[i];
     }
@@ -272,10 +276,10 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
     // remove the comments as you complete each routine
     // and add more lines as you add additional routines.
 
-    // int[] data = buildRandomArray(10, 20);
-    // int[] data2 = buildIncreasingArray(10,5,3);
-    // printArray(data);
-    // printArray(data2);
+    int[] data = buildRandomArray(10, 20);
+    int[] data2 = buildIncreasingArray(10,5,3);
+    printArray(data);
+    printArray(data2);
 
     // add calls to show that the methods you write work.
   }
