@@ -1,7 +1,7 @@
 /**
- * ArrayPractice by Team BossCoders
+ * ArrayPractice by Team 10
  * Steve Sabaugh
- * collaborators: First Last, First Last
+ * collaborators: We worked indepently
  */
 
 /**
@@ -258,22 +258,18 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
   {
     int[] tempArray = new int [data.length];
     
-    for (int i = data.length, j = 0;i >= 0 && j < data.length;i--, j++){
+    for (int i = data.length -1 , j = 0;i > -1 && j < data.length;i--, j++){
       tempArray[j] = data[i];
       
     }
-    for (int i = data.length;i < data.length;i++){
-      data[i] = tempArray[i];
+    for (int i = 0;i < tempArray.length;i++){
+      System.out.println(tempArray[i]);
     }
   }
 
 
   public static void main( String[] args )
   {
-    
-
-    // remove the comments as you complete each routine
-    // and add more lines as you add additional routines.
 
     int[] data = buildRandomArray(10, 20);
     int[] data2 = buildIncreasingArray(10,5,3);
@@ -318,12 +314,8 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
     
     //flip
     System.out.println("Printing data (Random) array reversed.");
-    printArray(flip(data));
+    flip(data);
     System.out.println("Printing data2 (Increasing) array reversed.");
-    printArray(flip(data2));
-    
-    
-
-    // add calls to show that the methods you write work.
+    flip(data2);
   }
 }
