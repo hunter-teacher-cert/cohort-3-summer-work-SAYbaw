@@ -1,6 +1,6 @@
 /**
  * ArrayPractice by Team BossCoders
- * First Last
+ * Steve Sabaugh
  * collaborators: First Last, First Last
  */
 
@@ -66,8 +66,8 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
     int idx = 0;
     
     for(int i = 0;i < data.length;i++){
-      if (data[i] == 0){
-        data[i] += step
+      if (i == 0){
+        data[i] += step;
       } 
       else {
         data[i] = data[i-1] + step;
@@ -162,7 +162,7 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
   public static int arraySum( int[] data )
   {
     int total = 0;
-    for (int i = 0;i <  data.length;i+){
+    for (int i = 0;i <  data.length;i++){
       total += data[i];
     }
 
@@ -190,10 +190,9 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
       if (data[i] < data[i-1]) {
         return false;
       }
-      else {
-        return true;
-      }
+     
     }
+    return true;
 
   }
 
@@ -228,7 +227,7 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
      will be 3 since three of the elements are odd.
   */
   public static int countOdds( int[] data ) {
-    int count;
+    int count = 0;
 
     for (int i = 0;i < data.length;i++){
       if (data[i] % 2 != 0){
@@ -259,7 +258,7 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
   {
     int[] tempArray = new int [data.length];
     
-    for (int i = data.length, int j = 0;i >=0 && j < data.length;i--, j++){
+    for (int i = data.length, j = 0;i >= 0 && j < data.length;i--, j++){
       tempArray[j] = data[i];
       
     }
@@ -278,8 +277,52 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
 
     int[] data = buildRandomArray(10, 20);
     int[] data2 = buildIncreasingArray(10,5,3);
+    int searchVal = 12;
+    int searchResult1 = firstOccurence(data2, searchVal);
+    int searchResult2 = firstOccurence(data, searchVal);
+    String found = " was found at index ";
+    String notFound = " was not found. Elements searched: ";
+    int oddCt = countOdds(data);
+    int oddCt2 = countOdds(data2);
+    
+    System.out.println("Random Array");
     printArray(data);
+     System.out.println("Increasing Array");
     printArray(data2);
+    //search increasing array data2
+    System.out.print(searchVal);
+    System.out.print((searchResult1 != data2.length) ?
+                      found : notFound);
+    System.out.println(searchResult1 + " of Increasing array (data2).");
+    //search random array data
+    System.out.print(searchVal);
+    System.out.print((searchResult2 != data.length) ?
+                      found : notFound);
+    System.out.println(searchResult2 + " of Random array (data).");
+    
+    //arraySum
+    System.out.printf("The sum of all %d elements in the random array (data) is %d\n", data.length, arraySum(data));
+    System.out.printf("The sum of all %d elements in the increasing array (data2) is %d\n", data2.length, arraySum(data2));
+    
+    //isSorted
+    System.out.printf("data (Random) array is %s.\n", isSorted(data) ? "sorted": "not sorted" );
+    System.out.printf("data2 (Increasing) array is %s.\n", isSorted(data2) ? "sorted": "not sorted" );
+    
+    //findMaxValue
+    System.out.printf("The larget value in data (Random) array is %s.\n", findMaxValue(data));
+    System.out.printf("The larget value in data2 (Increasing) array is %s.\n", findMaxValue(data2));
+
+    //countOdds
+    System.out.printf("There %s %d odd number%s in data (Random) array.\n", oddCt == 1 ? "is" : "are", oddCt, oddCt == 1 ? "" : "s");
+    System.out.printf("There %s %d odd number%s in data2 (Increasing) array.\n", oddCt2 == 1 ? "is" : "are", oddCt2, oddCt2 == 1 ? "" : "s");
+    
+    //flip
+    System.out.println("Printing data (Random) array reversed.");
+    printArray(flip(data));
+    System.out.println("Printing data2 (Increasing) array reversed.");
+    printArray(flip(data2));
+    
+    
 
     // add calls to show that the methods you write work.
   }
