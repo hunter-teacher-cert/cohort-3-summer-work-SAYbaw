@@ -262,9 +262,7 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
       tempArray[j] = data[i];
       
     }
-    for (int i = 0;i < tempArray.length;i++){
-      System.out.println(tempArray[i]);
-    }
+    printArray(tempArray);
   }
 
 
@@ -285,11 +283,13 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
     printArray(data);
      System.out.println("Increasing Array");
     printArray(data2);
+    
     //search increasing array data2
     System.out.print(searchVal);
     System.out.print((searchResult1 != data2.length) ?
                       found : notFound);
     System.out.println(searchResult1 + " of Increasing array (data2).");
+    
     //search random array data
     System.out.print(searchVal);
     System.out.print((searchResult2 != data.length) ?
