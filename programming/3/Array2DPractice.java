@@ -283,7 +283,7 @@ public class Array2DPractice
       elements
     */
     printBoard(b);
-    bCopy = copyBoard(b);
+    char [][] bCopy = copyBoard(b);
     System.out.println("copy of b");
     printBoard(bCopy);
     System.out.println();
