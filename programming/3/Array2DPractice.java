@@ -110,7 +110,6 @@ public class Array2DPractice
         board[i][j] = value;
       }
     }
-    printBoard(board);
   }
 
 
@@ -299,6 +298,7 @@ public class Array2DPractice
     explodeSquare(b,4,9);
     System.out.println("setRow() with copy of b");
     setRow(bCopy,1,'@');
+    printBoard(bCopy);
     
     System.out.println();
     
