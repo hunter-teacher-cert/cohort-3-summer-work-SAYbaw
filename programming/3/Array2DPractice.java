@@ -188,7 +188,7 @@ public class Array2DPractice
         }
       }  
     }
-    printBoard(board);
+    
   }
 
     /**
@@ -292,10 +292,13 @@ public class Array2DPractice
     printBoard(bCopy);
     System.out.println("explodeSquare()");
     explodeSquare(b,2,5);
+    printBoard(b);
     System.out.println();
     explodeSquare(b,0,0);
+    printBoard(b);
     System.out.println();
     explodeSquare(b,4,9);
+    printBoard(b);
     System.out.println("setRow() with copy of b");
     setRow(bCopy,1,'@');
     printBoard(bCopy);
