@@ -71,7 +71,12 @@ public class Array2DPractice
   */
   public static void printBoard( char[][] board )
   {
-    /* YOUR AWESOME CODE HERE */
+    for (int i = 0;i < board.length;i++){
+      for (int j = 0;j < board[i].length;j++){
+        System.out.print(board[i][j] + " ");
+      }
+      System.out.println();
+    }
   }
 
   /**
@@ -111,6 +116,7 @@ public class Array2DPractice
   public static char[][] copyBoard( char[][] original )
   {
     /* YOUR AWESOME CODE HERE */
+    return original;
   }
 
 
@@ -153,7 +159,40 @@ public class Array2DPractice
   */
   public static void explodeSquare( char[][] board, int row, int col )
   {
-    /* YOUR AWESOME CODE HERE */
+    int r = 0;
+    int c = 0;
+    
+    if (row < 1) //exception for edges 
+    {
+      r = row;
+    }
+    if (col < 1)
+    {
+      c = col;
+    } 
+    if (row > board.length - 1)
+    {
+      r = board.length - 2;
+    }
+    if (c > board[0].length - 1)
+    {
+      c = board[0].length - 2;
+    }
+    
+    for(int r = row - 1; i < row +2;i++)
+    {
+      for(int c = col - 1;j < col +2;j++)
+      {
+        if (r == row && c == col)
+        {
+          board[r][c] = board[r][c];
+        }
+        else {
+          board[r][c] = 'X';
+        }
+      }  
+    }
+    printBoard(board);
   }
 
   /**
@@ -238,5 +277,8 @@ public class Array2DPractice
       can use array notation to also access individual
       elements
     */
+    printBoard(b);
+    System.out.println();
+    explodeSquare(b,0,0);
   }
 }
