@@ -115,8 +115,14 @@ public class Array2DPractice
   */
   public static char[][] copyBoard( char[][] original )
   {
-    /* YOUR AWESOME CODE HERE */
-    return original;
+    char tempArray [][] = new char [original.length][original[0].length];
+
+    for (int i = 0;i < original.length;i++){
+      for (int j = 0;j < original[0].length;j++){
+        tempArray[i][j] = original[i][j];
+      }
+    }
+    return tempArray;
   }
 
 
@@ -277,7 +283,10 @@ public class Array2DPractice
       elements
     */
     printBoard(b);
+    bCopy = copyBoard(b);
+    System.out.println("copy of b");
+    printBoard(bCopy);
     System.out.println();
-    explodeSquare(b,0,0);
+    explodeSquare(b,2,5);
   }
 }
