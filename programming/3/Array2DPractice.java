@@ -160,14 +160,14 @@ public class Array2DPractice
   public static void explodeSquare( char[][] board, int row, int col )
   //https://docs.google.com/drawings/d/1zR4EbwbV0aBSJhCEGuiV6pko4QgdlNwhE6UoYGlwrEE/edit?usp=sharing
   {
-    int r = (row < 1) ? row : row - 1;
-    int c = (col < 1) ? col : col - 1;
-    int rowLim = (row + 2 > board.length - 1) ? board.length: row + 2;  
-    int colLim = (col + 2 > board[0].length -1) ? board[0].length:  col + 2;
+    int startR = (row - 1 < 0) ? row : row - 1;
+    int startC = (col - 1 < 0) ? col : col - 1;
+    int rowLim = (row + 1 > board.length - 1) ? row + 1 : row + 2;  
+    int colLim = (col + 1 > board[0].length - 1) ? col + 1 :  col + 2;
     
-    for(; r < rowLim;r++)
+    for(int r = startR; r < rowLim;r++)
     {
-      for(;r < colLim;c++)
+      for(int c = startC;c < colLim;c++)
       {
         if (r == row && c == col)
         {
