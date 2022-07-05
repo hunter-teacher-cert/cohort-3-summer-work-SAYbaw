@@ -269,7 +269,7 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
   public static void main( String[] args )
   {
 
-    int[] data = buildRandomArray(10, 20);
+    int[] data = buildRandomArray(3, 20);
     int[] data2 = buildIncreasingArray(10,5,3);
     int searchVal = 12;
     int searchResult1 = firstOccurence(data2, searchVal);
