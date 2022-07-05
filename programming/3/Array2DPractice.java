@@ -105,11 +105,12 @@ public class Array2DPractice
   */
   public static void setRow( char[][] board, int row, char value )
   {
-    for(;row < row + 1;row++){
-      for(int col = 0;col < board[row].length;col++){
-        board[row][col] = value;
+    for(int i = row;i < row + 1;i++){
+      for(int j = 0;j < board[i].length;j++){
+        board[i][j] = value;
       }
     }
+    printBoard(board);
   }
 
 
@@ -296,10 +297,9 @@ public class Array2DPractice
     explodeSquare(b,0,0);
     System.out.println();
     explodeSquare(b,4,9);
-    char [][] newArray = copyBoard(b);
-    setRow(newArray,1,'@');
-    System.out.println("setRow()");
-    printBoard(newArray);
+    System.out.println("setRow() with copy of b");
+    setRow(bCopy,1,'@');
+    
     System.out.println();
     
   }
