@@ -158,6 +158,7 @@ public class Array2DPractice
      to explode an element on the edges.
   */
   public static void explodeSquare( char[][] board, int row, int col )
+  //https://docs.google.com/drawings/d/1zR4EbwbV0aBSJhCEGuiV6pko4QgdlNwhE6UoYGlwrEE/edit?usp=sharing
   {
     int r = 0;
     int c = 0;
