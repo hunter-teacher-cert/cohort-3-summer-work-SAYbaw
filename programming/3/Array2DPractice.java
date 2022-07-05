@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Array2DPractice by Team LucidThinkeren
+ * Array2DPractice by Team Room 15
  * Steve Sabaugh
  * collaborators: Ashley Ufret, Thea Williams
  */
@@ -160,29 +160,14 @@ public class Array2DPractice
   public static void explodeSquare( char[][] board, int row, int col )
   //https://docs.google.com/drawings/d/1zR4EbwbV0aBSJhCEGuiV6pko4QgdlNwhE6UoYGlwrEE/edit?usp=sharing
   {
-    int r = 0;
-    int c = 0;
+    int r = (row < 1) ? row : row - 1;
+    int c = (col < 1) ? col : col - 1;
+    int rowLim = (row + 2 > board.length - 1) ? board.length: row + 2;  
+    int colLim = (col + 2 > board[0].length -1) ? board[0].length:  col + 2;
     
-    if (row < 1) //exception for edges 
+    for(; r < rowLim;r++)
     {
-      r = row;
-    }
-    if (col < 1)
-    {
-      c = col;
-    } 
-    if (row > board.length - 1)
-    {
-      r = board.length - 2;
-    }
-    if (c > board[0].length - 1)
-    {
-      c = board[0].length - 2;
-    }
-    
-    for(int r = row - 1; i < row +2;i++)
-    {
-      for(int c = col - 1;j < col +2;j++)
+      for(;r < colLim;c++)
       {
         if (r == row && c == col)
         {
@@ -196,7 +181,7 @@ public class Array2DPractice
     printBoard(board);
   }
 
-  /**
+    /**
      This method will search through the 2D array board and it will
      explode each square that contains the char c (using the above
      definition of exploding).
@@ -204,6 +189,19 @@ public class Array2DPractice
      Example:
 
      Given the array
+
+     qqzqq
+     qqqqq
+     qqqqq
+     qqqqq
+     qzqqq
+     qqqqq
+     qqqqz
+
+     ...
+     explodeAllchar(board,'z')
+     will change board to
+
      qXzXq
      qXXXq
      qqqqq
@@ -212,8 +210,8 @@ public class Array2DPractice
      XXXXX
      qqqXz
 
-     explodeAllchar(board,'z') will change board to:
   */
+ 
   public static void explodeAllChar(char[][] board, char c)
   {
     /* YOUR AWESOME CODE HERE */
