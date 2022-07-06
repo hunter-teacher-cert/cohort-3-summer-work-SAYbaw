@@ -225,7 +225,7 @@ public class Array2DPractice
   public static void explodeAllChar(char[][] board, char c)
   {
     for(int i = 0;i < board.length;i++){
-      for(int  j= 0;j < board[i].length;i++){
+      for(int  j= 0;j < board[i].length;j++){
         if (board[i][j] == c){
           int startRow;
           int startCol;
@@ -233,7 +233,7 @@ public class Array2DPractice
           int colLimit;
           
           if (i - 1 < 0){
-            startRow = i
+            startRow = i;
           }
           else{
             startRow = i - 1;
@@ -259,10 +259,10 @@ public class Array2DPractice
           for (int row = startRow;row < rowLimit;row++){
             for(int col = startCol;col < colLimit;col++){
               if (row == i && col == j){
-                board[r][c] = board[r][c];
+                board[row][col] = board[row][col];
               }    
               else {
-                board[r][c] = 'X';
+                board[row][col] = 'X';
               }
             }
           }
@@ -353,13 +353,23 @@ public class Array2DPractice
     System.out.println("setRow() with copy of b");
     setRow(bCopy,1,'@');
     printBoard(bCopy);
-    System.out.println();
+    System.out.println("downString()");
     char [][] c = buildBoard(7,6,'x');
     downString(c,1,1,"Hello");
     printBoard(c);
     System.out.println();
     downString(c,4,3,"World");
     printBoard(c);
+    System.out.println();
+    char [][] d =  {{'q','q','z','q','q'},
+                    {'q','q','q','q','q'},
+                    {'q','q','q','q','q'},
+                    {'q','q','q','q','q'},
+                    {'q','z','q','q','q'},
+                    {'q','q','q','q','q'},
+                    {'q','q','q','q','z'}};
+    explodeAllChar(d,'z');
+    printBoard(d);
     
     
   }
