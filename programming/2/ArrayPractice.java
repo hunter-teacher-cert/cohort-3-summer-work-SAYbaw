@@ -262,7 +262,9 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
       tempArray[j] = data[i];
       
     }
-    printArray(tempArray);
+    for(int i = 0;i < data.length;i++){
+      data[i] = tempArray[i];
+    }
   }
 
 
@@ -315,7 +317,9 @@ public static int[] buildIncreasingArray( int size, int startValue, int step )
     //flip
     System.out.println("Printing data (Random) array reversed.");
     flip(data);
+    printArray(data);
     System.out.println("Printing data2 (Increasing) array reversed.");
     flip(data2);
+    printArray(data2);
   }
 }
