@@ -360,7 +360,7 @@ public class Array2DPractice
     System.out.println();
     downString(c,4,3,"World");
     printBoard(c);
-    System.out.println();
+    System.out.println("explodeAllChar()");
     char [][] d =  {{'q','q','z','q','q'},
                     {'q','q','q','q','q'},
                     {'q','q','q','q','q'},
