@@ -273,7 +273,13 @@ public class Array2DPractice
   */
   public static void downString( char[][] board, int row, int col, String word )
   {
-    /* YOUR AWESOME CODE HERE */
+    for (int i = row;i < board.length;i++){
+      for(int j = col;j < col + 1;j++){
+        if (i < word.length() + row ){
+          board[i][j] = word.charAt(i-row);
+        }
+      }
+    }
   }
 
 
@@ -302,8 +308,14 @@ public class Array2DPractice
     System.out.println("setRow() with copy of b");
     setRow(bCopy,1,'@');
     printBoard(bCopy);
-    
     System.out.println();
+    char [][] c = buildBoard(7,6,'x');
+    downString(c,1,1,"Hello");
+    printBoard(c);
+    System.out.println();
+    downString(c,4,3,"World");
+    printBoard(c);
+    
     
   }
 }
