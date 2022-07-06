@@ -224,7 +224,52 @@ public class Array2DPractice
  
   public static void explodeAllChar(char[][] board, char c)
   {
-    /* YOUR AWESOME CODE HERE */
+    for(int i = 0;i < board.length;i++){
+      for(int  j= 0;j < board[i].length;i++){
+        if (board[i][j] == c){
+          int startRow;
+          int startCol;
+          int rowLimit;
+          int colLimit;
+          
+          if (i - 1 < 0){
+            startRow = i
+          }
+          else{
+            startRow = i - 1;
+          }
+          if (j - 1 < 0){
+            startCol = j;
+          }
+          else{
+            startCol = j - 1;
+          }
+          if (i + 1 > board.length - 1){
+            rowLimit = i + 1;
+          } 
+          else{
+            rowLimit = i + 2;
+          }
+          if (j + 1 > board[0].length - 1){
+            colLimit = j + 1;
+          } 
+          else{
+            colLimit = j + 2;
+          }
+          for (int row = startRow;row < rowLimit;row++){
+            for(int col = startCol;col < colLimit;col++){
+              if (row == i && col == j){
+                board[r][c] = board[r][c];
+              }    
+              else {
+                board[r][c] = 'X';
+              }
+            }
+          }
+      
+        }
+      }
+    }
   }
 
 
