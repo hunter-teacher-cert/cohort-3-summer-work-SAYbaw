@@ -149,7 +149,7 @@ public class SuperArray
   public void add(int index, int value)
   {
     // see if there's enough room
-    if (numberElements < data.length - 1){
+    if (numberElements < data.length){
         // shift elements toward the end of the array
     
       int [] tempArray = new int [data.length];
