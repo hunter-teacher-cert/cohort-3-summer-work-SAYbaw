@@ -50,7 +50,7 @@ public class SuperArray
   public SuperArray()
   {
     //init underlying/inner storage of capacity 10
-        data = new int[10]
+        data = new int[10];
 
     //init instance vars
         numberElements = 0;
@@ -83,7 +83,7 @@ public class SuperArray
   public boolean isEmpty()
   {
     //return whether this SuperArray instance is empty
-    for(int i = 0;i < data.length){
+    for(int i = 0;i < data.length;i++){
       if (data[i] != 0){
         return false;
       }
@@ -103,10 +103,11 @@ public class SuperArray
   public String toString()
   {
     //return stringified version of this Object
-    arrayString = "";
+    String arrayString = "";
     for (int i = 0;i < data.length;i++){
-      data[i] += arrayString + " ";
+      arrayString = arrayString + Integer.toString(data[i]) + " ";
     }
+    return arrayString;
   }//end toString()
 
 
@@ -175,9 +176,10 @@ public class SuperArray
   }
 
 
-  private void grow()
-  {
+  //private void grow()
+  //{
     // create a new array with extra space
+    //int [] newArray =  
     // Q: How did you decide how much to increase capacity by?
     /* YOUR SIMPLE+SMART CODE HERE */
 
@@ -187,6 +189,6 @@ public class SuperArray
     // point data to the new array
     // Q: How does this look when illustrated using encapsulation diagram?
     /* YOUR SIMPLE+SMART CODE HERE */
-  }//end grow()
+  //}//end grow()
 
 }//end class
