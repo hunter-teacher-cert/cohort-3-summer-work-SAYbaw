@@ -184,7 +184,7 @@ public class SuperArray
       data = tempArray;
       // increment numElements
       numberElements++;
-    } else {
+    } else {//this assumes you grew the array already with add(int)
       
      
       data[index] = value;

@@ -34,6 +34,9 @@ public class SuperArrayDriver
     System.out.println(sa2);
     sa2.remove(3);
     System.out.println(sa2);
+    //testing get()
+    System.out.print("What value is the index of 3 now?");
+    System.out.println(" The value of " + sa2.get(3) + ".");
     
     
 
