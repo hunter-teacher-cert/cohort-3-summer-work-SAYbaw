@@ -36,7 +36,7 @@ public class SuperArrayDriver
     System.out.println(sa2);
     
     
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     //precondition: newly-instantiated SuperArray of default capacity
     System.out.println("Testing overfill (calling grow() in add)");
     for (int i=0; i<15; i++) {
@@ -47,10 +47,11 @@ public class SuperArrayDriver
 
     System.out.println("\nTesting add at index 5, 0 and 17(end)");
     sa.add(5, 100);
+    //System.out.println(sa.debug());
     System.out.println(sa);
     sa.add(0, 100);
     System.out.println(sa);
-    sa.add(17, 100);
+    //sa.add(17, 100);
     System.out.println(sa);
 
     System.out.println("\nTesting remove at 0, 5, and 15 (end)");
@@ -62,6 +63,7 @@ public class SuperArrayDriver
 
     sa.remove(15);
     System.out.println(sa);
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//main

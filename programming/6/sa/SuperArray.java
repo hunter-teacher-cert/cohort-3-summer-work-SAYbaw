@@ -68,14 +68,27 @@ public class SuperArray
        Implement the rest of this method first,
        then only write this section once the rest is tested and working.
     */
-    /* YOUR SIMPLE+SMART CODE HERE */
+    if (numberElements == data.length){
+      grow();
 
-    // add item
-    /* YOUR SIMPLE+SMART CODE HERE */
+      // add item
+      data[data.length - 1] = value;
 
 
-    // increment numberElements
-    /* YOUR SIMPLE+SMART CODE HERE */
+      // increment numberElements
+      numberElements++;
+    } else {
+      // add item
+      data[numberElements] = value;
+      // increment numberElements
+    numberElements++;
+    }
+    
+
+    
+
+
+    
 
   }//end add()
 
@@ -138,7 +151,12 @@ public class SuperArray
         j++;
       }
     }
-    tempArray[numberElements - 1] = 0;
+    if (numberElements < data.length){
+      tempArray[numberElements - 1] = 0;
+    } else{
+      tempArray[data.length - 1] = 0;
+    }
+    
     data = tempArray;
 
     // subtract fom numElements;
@@ -164,31 +182,34 @@ public class SuperArray
         tempArray[i] = data[i - 1];
       }
       data = tempArray;
+      // increment numElements
+      numberElements++;
+    } else {
+      
+     
+      data[index] = value;
+      numberElements++;
     }
 
-  
-
-    
-    
-
-    // increment numElements
-    numberElements++;
   }
 
 
-  //private void grow()
-  //{
+  private void grow()
+  {
     // create a new array with extra space
-    //int [] newArray =  
+    int [] newArray =  new int[numberElements + 1];
     // Q: How did you decide how much to increase capacity by?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    
 
     // copy over all the elements from the old array to the new one
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for(int i = 0;i < data.length;i++){
+      newArray[i] = data[i];
+    }
 
     // point data to the new array
+    data = newArray;
     // Q: How does this look when illustrated using encapsulation diagram?
-    /* YOUR SIMPLE+SMART CODE HERE */
-  //}//end grow()
+    
+  }//end grow()
 
 }//end class
