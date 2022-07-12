@@ -68,7 +68,7 @@ public class SuperArray
        Implement the rest of this method first,
        then only write this section once the rest is tested and working.
     */
-    if (numberElements == data.length){
+    if (data.length <= numberElements){
       grow();
 
       // add item
@@ -96,12 +96,18 @@ public class SuperArray
   public boolean isEmpty()
   {
     //return whether this SuperArray instance is empty
-    for(int i = 0;i < data.length;i++){
+    return numberElements == 0;
+    /**for(int i = 0;i < data.length;i++){
       if (data[i] != 0){
         return false;
       }
     }
     return true;
+    if (numberElements == 0){
+      return true;
+    else {
+      return false;
+    }**/
     
   }
 
@@ -151,22 +157,32 @@ public class SuperArray
         j++;
       }
     }
-    if (numberElements < data.length){
+    /*if (numberElements < data.length){
       tempArray[numberElements - 1] = 0;
     } else{
       tempArray[data.length - 1] = 0;
     }
-    
+    */
     data = tempArray;
-
+    
     // subtract fom numElements;
     numberElements--;
+    //in place traversal version
+    /**for (int i = index; i < numberElements-1; i++){
+        data[i] = data[i+1];
+      }
+    data[numberElements-1] = 0;
+    
+    // subtract fom numElements;
+    numberElements --;**/
+  
   }
 
 
   public void add(int index, int value)
   {
     // see if there's enough room
+    /**
     if (numberElements < data.length){
         // shift elements toward the end of the array
     
@@ -189,9 +205,44 @@ public class SuperArray
      
       data[index] = value;
       numberElements++;
+    }**/
+    /* 3 7 10 4 0 0 0
+      NumberElements = 4
+      Goal: Add to index 1 value 5
+      3 7 10 4 0 0 0
+
+      Index 4 = Index 3
+      3 7 10 4 4 0 0
+
+      Index 3 = Index 2
+      3 7 10 10 4 0 0
+
+      Index 2 = Index 1
+      3 7 7 10 4 0 0
+
+      Index 1 = value
+      3 5 7 10 4 0 0
+    */
+    
+    // see if there's enough room
+    if (data.length <= numberElements){
+      grow();
     }
 
+    // shift elements toward the end of the array
+    for (int i = numberElements; i > index; i--){
+      data[i] = data[i-1];
+    }
+
+    // insert new element
+    data[index] = value;
+
+    // increment numElements
+    numberElements++;
   }
+
+
+  
 
 
   private void grow()
