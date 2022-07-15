@@ -1,7 +1,7 @@
 /**
  * SuperArray by Team MarvelvsDC
- * First Last
- * collaborators: First Last, First Last
+ * Alicia Wade
+ * collaborators: Wayne Tobias, William LaMorie
  */
 
 /**
