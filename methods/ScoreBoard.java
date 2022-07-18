@@ -28,7 +28,7 @@ public class ScoreBoard {
 					, (sideChoice == 0) ? "the Home team" : "the Visiting team");
 		  //^ inline if else using the ternay operator ^
 			userChoice = user.nextInt();
-			//Chain if else with nested if else
+			//Decision Structure : Chain if else with nested if else
 			if (userChoice == 6) {
 				System.out.println(drawDigit(TOUCH_DOWN));
         
