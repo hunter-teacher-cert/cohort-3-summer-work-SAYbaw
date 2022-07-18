@@ -26,7 +26,7 @@ public class ScoreBoard {
 			
 			System.out.printf("Enter score [6, 1, 3, 2, 0] for %s or -1 to quit:"
 					, (sideChoice == 0) ? "the Home team" : "the Visiting team");
-		
+		  //^ inline if else using the ternay operator ^
 			userChoice = user.nextInt();
 			//Chain if else with nested if else
 			if (userChoice == 6) {
