@@ -79,15 +79,17 @@ public class ScoreBoard {
 				displayBoard(homeScr, awayScr);
         
 			} else {
-        
+        			//to prevent printing on exit condition
 				if (userChoice != -1) {
 					System.out.println("NOT A VALID SCORE!");
 				}
 			}
 		} 
-		user.close();
+		user.close();//Close scanner object. 
+		//Good habit to always close i/o streams 
+		//when done uing them.
 		System.out.println("GOOD GAME!!!");
-		System.exit(0);
+		System.exit(0);//graceful exit
 	}
   //This method will be completed as part of the Skeleton except for the printf statement
 	public static void displayBoard(int hScr, int vScr) {
@@ -96,6 +98,8 @@ public class ScoreBoard {
 		System.out.println("| VISITORS |   HOME   |");
 		System.out.println("+----------+----------+");
 		System.out.printf("|%6d    |%6d    |\n",vScr, hScr);
+		//set field widths to accomadate single 
+		//and double digits and justification
 		System.out.println("+----------+----------+");
 	}
   //This method will be complete for the skeleton
