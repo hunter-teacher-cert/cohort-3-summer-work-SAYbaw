@@ -9,12 +9,8 @@ public class PhoneBook {
 		try {
 			menu();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
-
+		}	
 	}
 	public static void addName(ArrayList <String> names, String name){
 		names.add(name);
@@ -87,43 +83,42 @@ public class PhoneBook {
 		ArrayList <String> numbers = getPhoneData();
 		ArrayList <String> addresses = getMailData();
 		String userChoice = "";
-		int userChoiceInt;
-		
 		do {
 			for(int i = 0;i < contacts.size();i++) {
 				System.out.println("" + (i + 1) + " : " + contacts.get(i));
 			}
 			printSpace(5);
 			userChoice = JOptionPane.showInputDialog("Enter the number next to the contact name for"
-					+ "contact info or enter 'a' to add a new contact");
-			
+					+ " contact info or enter 'a' to add a new contact or 'x' to exit");
+				
 			if (userChoice.equals("a")) {
 				addContact(contacts, numbers, addresses);
 				contacts = getContactData();
 				numbers = getPhoneData();
 				addresses = getMailData();
-				printSpace(5);
 				
 				for(int i = 0;i < contacts.size();i++) {
 					System.out.println("" + (i + 1) + " : " + contacts.get(i));
 				}
-			}
-			userChoiceInt = userChoice.equals("a") ? contacts.size() : Integer.parseInt(userChoice);
-			
-			JOptionPane.showMessageDialog(null, "Name: " + contacts.get(userChoiceInt - 1) 
-			+ "\n" + "Number: " + numbers.get(userChoiceInt - 1)
-			+ "\n" + "Address: " + addresses.get(userChoiceInt - 1));
-			printSpace(5);
-			
-		} while ((userChoiceInt > 0 && userChoiceInt < contacts.size() + 1)
-				|| (userChoice == "a"));
-		
+				printSpace(5);
+				JOptionPane.showMessageDialog(null, "Name: " + contacts.get(contacts.size() - 1) 
+				+ "\n" + "Number: " + numbers.get(numbers.size() - 1)
+				+ "\n" + "Address: " + addresses.get(addresses.size() - 1));
+				
+			} else if(userChoice.equals("x")) {
+				System.exit(0);
+			} else {
+				int userChoiceInt = Integer.parseInt(userChoice);
+				
+				JOptionPane.showMessageDialog(null, "Name: " + contacts.get(userChoiceInt - 1) 
+				+ "\n" + "Number: " + numbers.get(userChoiceInt - 1)
+				+ "\n" + "Address: " + addresses.get(userChoiceInt - 1));
+			}		
+		} while (userChoice.equals("x") == false);
 	}
 	public static void printSpace(int lines) {
 		for(int i = 0;i < lines + 1;i++) {
 			System.out.println();
 		}
 	}
-	//ArrayList <String> contacts, ArrayList <String> numbers, ArrayList <String> addresses
-
 }
