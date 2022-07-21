@@ -1,0 +1,67 @@
+Seth Adams
+Team ___ :: Steve, Saranii, Parmanand
+Methods - Summer 2022
+
+CODE TRACING in the classroom
+======================================
+
+
+PROS:
+---------------------------------------
+<general positive aspects of incorporating code or algorithm tracing into a CS course, from your perspective>
+
+*very relateable to the AP exam and IB exam with psuedocode and algorithm tracing and trace tables
+* Could work for block based - still trying to figure out how 
+* Great way to visualize looping and recursion in a function
+
+CONS:
+---------------------------------------
+<general negative aspects of incorporating code or algorithm tracing into a CS course, from your perspective>
+
+* Could still be a bit too abstract for younger kids so would have 
+to be physicalized somehow - legos could be useful or pennies 
+
+BEST FOR:
+---------------------------------------
+<types of activities from courses you teach or have taught that could benefit from an emphasis on tracing>
+
+* debugging
+* understanding looping
+* breaking down an algorithm into digestable chunks 
+  *constructors
+* differentiation for complex topics--provide skeleton of trace diagram and have them fill out as we go.--lets groups share with one another and/or work in group
+
+
+LEAST-SUITED TO:
+---------------------------------------
+<opposite of above -- and why>
+
+* First introduction of a topic -- let code run and then debug or use to explain more in depth the "under the hood"
+* Careful of too many variables, methods, or 'things' going on
+
+
+PROVEN PRO-TIPS:
+---------------------------------------
+<
+ anything that has worked well for any member of your team, in the way of ...
+ * live tracing ("trace-along" a la livecoding)
+    - seeing different ways of doing it
+ * tracing as an assignment
+    - choosing which style work best
+ * tools, physical/online/otherwise that make it easier/clearer
+    - Python tutor
+    - manipulatives (we came up with the idea of legos)
+ * etc 
+>
+
+
+RESOURCES:
+---------------------------------------
+< any links, reading titles, names, etc. you have find useful >
+* pythontutor
+* print traces -- tracing in the code through print statements
+
+
+OTHER:
+---------------------------------------
+< anything you like, not already covered in prior prompts. >
