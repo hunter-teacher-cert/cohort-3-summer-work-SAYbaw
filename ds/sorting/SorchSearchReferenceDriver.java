@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class SortSearchReferenceDriver {
+public class SorchSearchReferenceDriver {
     public static void main(String[] args) {
 
 
@@ -34,6 +34,12 @@ public class SortSearchReferenceDriver {
 	int binaryTest = ss.binarySearch(ss.get(100000));
 	elapsed = System.currentTimeMillis() - start;
 	System.out.println("Size: " + size + ", Time of binary search: " + elapsed + " milliseconds");
+
+  //binary recursive search list
+	start = System.currentTimeMillis();
+	int binaryRecTest = ss.binarySearchRecursive(ss.get(100000),0,100000);
+	elapsed = System.currentTimeMillis() - start;
+	System.out.println("Size: " + size + ", Time of binary recursive search: " + elapsed + " milliseconds");
 			   
 
 	      

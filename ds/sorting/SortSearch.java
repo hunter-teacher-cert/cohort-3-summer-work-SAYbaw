@@ -188,7 +188,7 @@ public class SortSearch{
         }
 	// refer to class discussion
 	
-	return data.size();
+	return -1;
 	    
     }
     
